@@ -1,13 +1,136 @@
 body {
+  background: url('./img/img-1.jpg');
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: sans-serif;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-t{
+  height: 120px;
+  background-color: transparent;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: none;
+  
 }
+.nav-t h1{
+  
+  font-size:6rem;
+  font-family: 'Modak';
+  color: #fff;
+  text-shadow: 0px 20px 15px rgba(255, 255, 255, 0.24);
+}
+nav .brand-logo {
+  display: block;
+  text-align: center;
+  position: relative;
+  
+}
+
+.input-field label {
+  color: #6cc5ff;
+  font-size: 1.3rem;
+  
+}
+
+.input-field input[type=text]:focus + label {
+  color: #54bbff;
+  
+} 
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #54bbff;
+  box-shadow: 0 1px 0 0 #487ae3;
+}
+
+input[type=text]:not(.browser-default) {
+  border-bottom: 2px solid #54bbff;
+  color: #fff;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #54bbff;
+  -webkit-box-shadow: 0 1px 0 0 #54bbff;
+  box-shadow: 0 1px 0 0 #54bbff;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]) + label {
+  color: #54bbff;
+}
+
+.content-form {
+  margin-top: 12rem;
+  
+}
+.menssage{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.error {
+  padding: 1rem!important;
+  color:white;
+  margin-top: 3rem;
+  text-align: center;
+  text-emphasis: left;
+}
+
+.weather-cont h2 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.weather-cont p {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.weather-t{
+  letter-spacing: .2rem;
+  text-shadow: 1px 0 10px rgba(255, 255, 255, 0.767);
+  font-family:'Patua One' ;
+  color: rgb(255, 255, 255)! important;
+  font-size: 3.5rem!important
+  
+  
+}
+.weater-p {
+  text-shadow: 1px 0 10px rgba(255, 255, 255, 0.767);
+  font-size: 4rem!important
+
+}
+.weather span {
+  font-size: 2rem!important;
+  vertical-align: super;
+}
+
+.weatherdescrip{
+    text-transform: uppercase;
+}
+
+.btn-block {
+  display: block!important;
+}
+
+.btn-t{
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+.form-cont{
+  
+ margin: auto;
+ 
+}
+
+.weather-cont{
+  margin:auto;
+  
+}
+
+.error {
+  padding: 1rem!important;
+  text-align: center!important;
+  
+}
+
