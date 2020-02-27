@@ -6,97 +6,92 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Error from "./components/Error";
 import Spinner from "./components/Spinner";
 
-function App() {
+  function App() {
 
-    const [search, saveSearch] = useState({
-      city: '',
-      country:''
-  });
-    const [consult, saveConsult] = useState(false);
-    const [result, saveResult]= useState({});
-    const [error, SaveError] = useState(false);
-    const [loading, saveLoading] = useState(false);
-
-
-    //***Extract Values ****//
+      const [search, saveSearch] = useState({
+        city: '',
+        country:''
+    });
+      const [consult, saveConsult] = useState(false);
+      const [result, saveResult]= useState({});
+      const [error, SaveError] = useState(false);
+      const [loading, saveLoading] = useState(false);
 
 
-    const {city, country} = search;
+      //***Extract Values ****//
 
-    useEffect(() => {
 
-        const consultAPI = async () => {
+      const {city, country} = search;
 
-          if(consult){
+      useEffect(() => {
 
-            const appId = '71cbb031f970dcdde3746db6329dcd26';
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appId}`;
+          const consultAPI = async () => {
 
-            const reply = await fetch(url);
-            const result = await reply.json();
+            if(consult){
 
-            saveResult(result);
-            saveConsult(false);
+              const appId = '71cbb031f970dcdde3746db6329dcd26';
+              const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appId}`;
 
-          //****Detect if the query is correct ****//
+              const reply = await fetch(url);
+              const result = await reply.json();
 
-          if(result.cod === '404'){
+              saveResult(result);
+              saveConsult(false);
 
-            SaveError(true);
-            } else{
-            SaveError(false);
+            //****Detect if the query is correct ****//
+
+            if(result.cod === '404'){
+
+              SaveError(true);
+              } else{
+              SaveError(false);
+              }
+
             }
-
           }
-        }
 
-        consultAPI();
-        // eslint-disable-next-line
-    },[consult]);
+          consultAPI();
+          // eslint-disable-next-line
+      },[consult]);
 
- 
+      let component;
 
-    let component;
+      if(error){
 
-    if(error){
+        component = <Error message="No results" />
 
-      component = <Error message="No results" />
+      } else{
 
-    } else{
+        component = <Weather
+        result = {result} />
 
-      component = <Weather
-      result = {result} />
+      }
 
-    }
+  return(
 
-    
-
-return(
-
-    <Fragment>
-    <Header 
-    title='Weather App'
-    />
-
-    <div className=" content-form">
-      <div className="container ">
-        <div className="row">
-          <div className="form-cont col-md-6 col-sm-12 order-2 order-lg-2  cont-w">
-            <Form 
-            search={search}
-            saveSearch={saveSearch}
-            saveConsult={saveConsult}
-            saveLoading = {saveLoading}
-            />
-          </div>
-          <div className="weather-cont col-md-6 col-sm-12  order-md-2">
-           {loading ? <Spinner /> : component}
+      <Fragment>
+      <Header 
+        title='Weather App'
+      />
+      <div className=" content-form">
+        <div className="container ">
+          <div className="row">
+            <div className="form-cont col-md-6 col-sm-12 order-2 order-lg-2  cont-w">
+              <Form 
+                search={search}
+                saveSearch={saveSearch}
+                saveConsult={saveConsult}
+                saveLoading = {saveLoading}
+              />
+            </div>
+            <div className="weather-cont col-md-6 col-sm-12  order-md-2">
+            {loading ? <Spinner /> : component}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    </Fragment>
-  );
-}
+      </Fragment>
+    );
+  }
 
 export default App;

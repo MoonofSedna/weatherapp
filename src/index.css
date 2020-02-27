@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  
 }
 
 .nav-t{
@@ -12,31 +11,34 @@ body {
   padding: 2rem;
   text-align: center;
   box-shadow: none;
-  
 }
+
 .nav-t h1{
-  
-  font-size:5rem;
-  font-family: 'Baloo';
+  font-size:4rem;
+  font-family: 'Concert One';
   color: #fff;
   text-shadow: 1px 0 25px rgba(255, 255, 255, 0.767);
  }
+
 nav .brand-logo {
   display: block;
   text-align: center;
   position: relative;
-  
+}
+
+.img-l{
+  width: 170px;
+  margin: auto;
 }
 
 .input-field label {
-  color: #6cc5ff;
-  font-size: 1.3rem;
-  
+  color: #b0d1e7;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .input-field input[type=text]:focus + label {
   color: #54bbff;
-  
 } 
 
 .input-field input[type=text]:focus {
@@ -48,19 +50,21 @@ input[type=text]:not(.browser-default) {
   border-bottom: 2px solid #54bbff;
   color: #fff;
 }
+
 input[type=text]:not(.browser-default):focus:not([readonly]) {
   border-bottom: 1px solid #54bbff;
   -webkit-box-shadow: 0 1px 0 0 #54bbff;
   box-shadow: 0 1px 0 0 #54bbff;
 }
+
 input[type=text]:not(.browser-default):focus:not([readonly]) + label {
   color: #54bbff;
 }
 
 .content-form {
-  margin-top: 12rem;
-  
+  margin-top: 15rem;
 }
+
 .menssage{
   text-align: center;
   font-size: 2rem;
@@ -75,28 +79,27 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
 }
 
 .weather-cont h2 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 .weather-cont p {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .weather-t{
   letter-spacing: .2rem;
   text-shadow: 1px 0 10px rgba(255, 255, 255, 0.767);
-  font-family:'Patua One' ;
+  font-family:'Concert One' ;
   color: rgb(255, 255, 255)! important;
-  font-size: 3.5rem!important
-  
-  
+  font-size: 3rem!important
 }
+
 .weater-p {
   text-shadow: 1px 0 10px rgba(255, 255, 255, 0.767);
   font-size: 4rem!important
-
 }
+
 .weather span {
   font-size: 2rem!important;
   vertical-align: super;
